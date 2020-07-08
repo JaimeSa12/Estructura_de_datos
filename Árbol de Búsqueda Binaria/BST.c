@@ -34,7 +34,6 @@ insertar (struct nodoArbol *raiz, int dato)
   return raiz;
 }
 
-
 void
 inorden (struct nodoArbol *raiz)
 {
@@ -178,15 +177,12 @@ eliminar (struct nodoArbol *raiz, int dato)
   //Proceso en caso de que el nodo a eliminar tenga ambos hijos.
   nodoValorBajo = nodoEliminar->derecha;
   padreValorBajo = nodoEliminar;
-
   while (nodoValorBajo->izquierda != NULL)
     {
       padreValorBajo = nodoValorBajo;
       nodoValorBajo = nodoValorBajo->izquierda;
     }
-
   nodoEliminar->dato = nodoValorBajo->dato;
-
   if (padreValorBajo->derecha == nodoValorBajo)
     {
       padreValorBajo->derecha = nodoValorBajo->derecha;
